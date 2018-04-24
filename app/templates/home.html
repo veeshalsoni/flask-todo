@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+{% endblock %}
+{% block app_content %}
+
+<div class="row">
+	<div class="col-md-4" style="border-right: 1px solid #e3e3e3">
+		{{ wtf.quick_form(Taskform,action='/addtask',id='taskform') }}
+		<br>
+		<span class='alert alert-info' id='taskinfo' style="display: none"> </span>
+	</div>
+	<div class="col-md-8">
+		{{ wtf.quick_form(DatePostsform,form_type='inline')}}
+		<br>
+		<span class='alert alert-info' id='taskops' style="display: none"> </span>
+		<hr>
+		<div class="row text-center">
+			<div class="col-sm-11">
+				<div class="table-responsive">
+					<table id="tasktable" class="table table-hover" border = "1px">
+					    <thead>
+					        <tr>
+					            <th class="col-md-3 taskheader">Category</th>
+					            <th class="col-md-7 taskheader">Task</th>
+					            <th class="col-md-1 taskheader">Done</th>
+					            <th class="col-md-1 taskheader">Delete</th>
+					        </tr>
+					    </thead>
+					    <tbody>
+							{% for task in tasks %}
+					        <tr>
+					            <td class="col-md-3"> {{ task.category }}</td>
+					            <td class="col-md-7"> {{ task.text }}</td>
+					            <td class="col-md-1"> <button id = "task-done-{{ task.id }}" class="btn btn-default btn-sm glyphicon glyphicon-check {% if task.completed %} task-done {% endif %}"> </button> </td>
+					            <td class="col-md-1"> <button id = "task-delete-{{ task.id }}" class="btn btn-default btn-sm glyphicon glyphicon-remove" style="color:red"> </button> </td>
+					        </tr>
+							{% endfor %}
+					    </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src ="{{ url_for('static',filename='js/home.js') }}"> </script>
+{% endblock %}

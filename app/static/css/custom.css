@@ -1,0 +1,111 @@
+a:hover
+{
+	text-decoration: underline;
+}
+
+.fullwidth
+{
+	width: 100%;
+}
+
+#custom
+{
+	font-family: Tahoma;
+}
+
+#custom .row
+{
+	padding: 10px;
+}
+
+#custom .navbar
+{
+	background-color: #b60b0b;
+	padding: 3px;
+}
+
+#custom .navbar-header
+{
+	float: left;
+	text-align: center;
+	width: 100%;
+	padding: 15px;
+}
+
+#custom .navbar-right
+{
+	margin-left: -20%;
+	padding: 3px;
+}
+
+#custom .navbar-brand
+{
+	color:white;
+	font-size: 25px;
+	float: none;
+}
+
+#custom .navbar-links
+{
+	color:white;
+	font-size: 18px;
+}
+
+#custom .navbar-links:hover
+{
+	text-decoration: underline;
+	transition: 0.3s;
+}
+
+#custom .jumbotron
+{
+	overflow: auto;
+	padding: 60px;
+}
+
+.leftjumbo
+{
+	margin-left:30%;
+	float: left;
+	list-style-type: none;
+}
+
+.rightjumbo
+{
+	margin-left:10%;
+	list-style-type: none;
+}
+
+.icons
+{
+	color: #b60b0b;
+	font-size: 25px;
+}
+
+.feature-row
+{
+	margin : 30px auto;
+}
+
+.hr-saperator
+{
+	border-color: #b60b0b;
+	border-width: 2px;
+}
+
+#custom .table-responsive
+{
+	overflow-x: visible;
+}
+
+#custom .taskheader
+{
+	background-color: #b60b0b;
+	color: white;	
+	text-align: center;
+}
+
+.task-done
+{
+	color : #03cb03;
+}
